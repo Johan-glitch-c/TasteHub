@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TasteHub</title>
+
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <div class="logo">Taste<span>Hub</span></div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#recipes">Recipes</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="btn">Sign In</button>
+  </div>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<footer id="contact">
+  <div class="container footer-content">
+    <div>
+      <div class="logo">Taste<span>Hub</span></div>
+
+      <p style="color:#777; margin-top:10px;">
+        © 2026 TasteHub. All rights reserved.
+      </p>
+    </div>
+
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script src="{% static 'scripts.js' %}"></script>
+
+</body>
+</html>
