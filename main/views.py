@@ -1,5 +1,13 @@
 from django.shortcuts import render
+from .models import Recipe, Category
+
 
 # Create your views here.
 def index(request):
-    return render(request,'recipe_site_frontend_react.jsx')
+    recipes = Recipe.objects.all()
+    categories = Category.objects.all()
+    context = {
+        'recipes': recipes,
+        'categories': categories,
+    }
+    return render(request,'index.html',context)

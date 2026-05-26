@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from django.conf.urls.static import static
 import os
 from dotenv import load_dotenv
 
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+'django.contrib.staticfiles',
     'main.apps.MainConfig',
 ]
 
@@ -122,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT= BASE_DIR / 'static'
 
 
 MEDIA_ROOT = BASE_DIR / 'media'

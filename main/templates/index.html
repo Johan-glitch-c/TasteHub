@@ -1,0 +1,130 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TasteHub</title>
+
+  <link rel="stylesheet" href="{% static 'style.css'%}"/>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo">Taste<span>Hub</span></div>
+
+      <nav>
+        <a href="#">Home</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="btn">Sign In</button>
+    </div>
+  </header>
+
+  <section class="hero container">
+    <div class="hero-text">
+      <h1>Delicious Recipes For Every Day</h1>
+
+      <p>
+        Discover amazing dishes, save your favorite meals, and cook like a professional chef from your own kitchen.
+      </p>
+
+      <button class="btn">Explore Recipes</button>
+    </div>
+
+    <img
+      src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1400&auto=format&fit=crop"
+      alt="Food"
+    />
+  </section>
+
+  <section class="container">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search recipes..." />
+ <select id="categorySelect">
+     {% for category in categories %}
+     {{ category.name }}
+     {% endfor %}
+      </select>
+
+      <button class="btn" onclick="searchRecipes()">Search</button>
+    </div>
+  </section>
+
+  <section class="container" id="recipes">
+    <div class="section-title">
+      <h2>Popular Recipes</h2>
+    </div>
+
+<div class="recipes" id="recipeContainer">
+
+  {% for recipe in recipes %}
+
+    <div class="card">
+
+      <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+
+      <div class="card-content">
+
+        <span class="category">
+          {{ recipe.category }}
+        </span>
+
+        <h3>
+          {{ recipe.name }}
+        </h3>
+
+        <p>
+          {{ recipe.ingredients }}
+        </p>
+
+        <button class="btn">
+          View Recipe
+        </button>
+
+      </div>
+    </div>
+
+  {% endfor %}
+
+</div>
+  </section>
+
+  <section class="container newsletter">
+    <h2>Get Weekly Recipe Updates</h2>
+
+    <p>
+      Subscribe and receive fresh recipes and cooking inspiration every week.
+    </p>
+
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email" />
+      <button class="btn">Subscribe</button>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container footer-content">
+      <div>
+        <div class="logo">Taste<span>Hub</span></div>
+        <p style="color:#777; margin-top:10px;">
+          © 2026 TasteHub. All rights reserved.
+        </p>
+      </div>
+
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>
