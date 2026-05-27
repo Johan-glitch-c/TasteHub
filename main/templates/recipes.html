@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <section class="container" style="padding-top: 70px;">
+    <div class="section-title">
+      <div>
+        <p style="color: orange; margin-bottom: 10px;">
+          Browse Categories
+        </p>
+
+        <h2>Recipe Categories</h2>
+      </div>
+    </div>
+
+    <div class="recipes">
+        {% for category in categories %}
+
+      <div class="card">
+        <img
+          src="{{ category.image.url }}"
+          alt="{{ category.name }}"
+        />
+
+        <div class="card-content">
+          <span class="category">{{ category.name }}</span>
+
+          <h3>{{category.name}} Recipes</h3>
+
+          <p>
+              {{category.description}}
+          </p>
+
+          <button class="btn">View Category</button>
+        </div>
+      </div>
+
+
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
+
+ 
