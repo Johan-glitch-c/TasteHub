@@ -15,7 +15,7 @@
         </p>
 
         <h2>
-          Italian Recipes
+            {{category.name}} Recipes
         </h2>
 
       </div>
@@ -23,26 +23,26 @@
     </div>
 
     <div class="recipes">
-
+        {% for recipe in recipes %}
       <div class="card">
 
         <img
-          src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1200&auto=format&fit=crop"
+          src="{{recipe.image.url}}"
           alt="Pasta"
         >
 
         <div class="card-content">
 
           <span class="category">
-            Italian
+            {{recipe.category}}
           </span>
 
           <h3>
-            Creamy Pasta
+              {{recipe.name}}
           </h3>
 
           <p>
-            Delicious creamy pasta with cheese and herbs.
+              {{ recipe.description}}
           </p>
 
           <button class="btn">
@@ -52,95 +52,10 @@
         </div>
 
       </div>
+        {% endfor %}
 
-      <div class="card">
-
-        <img
-          src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop"
-          alt="Pizza"
-        >
-
-        <div class="card-content">
-
-          <span class="category">
-            Italian
-          </span>
-
-          <h3>
-            Pepperoni Pizza
-          </h3>
-
-          <p>
-            Homemade pizza with cheese and pepperoni.
-          </p>
-
-          <button class="btn">
-            View Recipe
-          </button>
 
         </div>
-
-      </div>
-
-      <div class="card">
-
-        <img
-          src="https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=1200&auto=format&fit=crop"
-          alt="Lasagna"
-        >
-
-        <div class="card-content">
-
-          <span class="category">
-            Italian
-          </span>
-
-          <h3>
-            Lasagna
-          </h3>
-
-          <p>
-            Traditional Italian lasagna with meat and cheese.
-          </p>
-
-          <button class="btn">
-            View Recipe
-          </button>
-
-        </div>
-
-      </div>
-
-      <div class="card">
-
-        <img
-          src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?q=80&w=1200&auto=format&fit=crop"
-          alt="Spaghetti"
-        >
-
-        <div class="card-content">
-
-          <span class="category">
-            Italian
-          </span>
-
-          <h3>
-            Spaghetti Bolognese
-          </h3>
-
-          <p>
-            Spaghetti with rich tomato meat sauce.
-          </p>
-
-          <button class="btn">
-            View Recipe
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
 
   </section>
 {% endblock %}
