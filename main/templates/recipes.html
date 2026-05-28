@@ -30,13 +30,14 @@
 
           <p>
               {{category.description}}
-          </p>
-
-          <button class="btn">View Category</button>
+              <div>
+              <a href="{% url 'category_recipes' category.id %}">
+          <button class="btn">View Category
+          </button>
+        </a>
+            </div>
         </div>
       </div>
-
-
       {% endfor %}
     </div>
   </section>

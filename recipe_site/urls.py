@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name='index'),
     path('recipes/',Recipes,name='Recipes'),
-    path('categories/',category_recipes,name='category_recipes'),
+    path('categories/<int:id>/',category_recipes,name='category_recipes'),
 ]
 
 
