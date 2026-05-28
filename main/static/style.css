@@ -42,6 +42,11 @@ header {
   color: orange;
 }
 
+.logo a{
+    text-decoration:none;
+    color:orange;
+}
+
 nav {
   display: flex;
   gap: 30px;
