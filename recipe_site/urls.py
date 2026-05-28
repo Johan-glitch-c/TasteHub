@@ -20,7 +20,7 @@ from django.urls import path
 from main.views import index, Recipes,category_recipes
 from django.conf.urls.static import static
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls,name='admin'),
     path('',index,name='index'),
     path('recipes/',Recipes,name='Recipes'),
     path('categories/<int:id>/',category_recipes,name='category_recipes'),

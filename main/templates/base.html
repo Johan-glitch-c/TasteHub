@@ -20,10 +20,19 @@
       <a href="{% url 'index' %}">Home</a>
       <a href="{% url 'Recipes' %}">Recipes</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="">Contact</a>
     </nav>
-
+<div class="nav-buttons">
     <button class="btn">Sign In</button>
+      {% if user.is_superuser %}
+      <a href="{% url 'admin:index' %}">
+       <button class="btn">
+        Admin Panel
+    </button>
+      </a>
+      {% endif %}
+  </div>
+
   </div>
 </header>
 
