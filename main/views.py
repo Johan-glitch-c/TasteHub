@@ -1,17 +1,29 @@
-from django.http import HttpResponse
-from django.shortcuts import render,get_object_or_404
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import Recipe, Category
-
+from .forms import SearchForm
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
     recipes = Recipe.objects.all()
     categories = Category.objects.all()
-    context = {
+
+    search = request.GET.get('search', '').strip()
+    category = request.GET.get('category', '').strip()
+
+    if search:
+        recipes = recipes.filter(name__icontains=search)
+
+    if category.isdigit():
+        recipes = recipes.filter(category_id=int(category))
+
+    return render(request, 'index.html', {
         'recipes': recipes,
         'categories': categories,
-    }
-    return render(request,'index.html',context)
+        'search': search,
+        'selected_category': category,
+    })
 
 def Recipes(request):
     recipes = Recipe.objects.all()
