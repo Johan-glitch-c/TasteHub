@@ -280,3 +280,61 @@ footer {
     font-size: 32px;
   }
 }
+
+.about-section{
+    padding:100px 0;
+}
+
+.about-content{
+    max-width:900px;
+    margin:auto;
+}
+
+.about-subtitle{
+    color:orange;
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.about-content h1{
+    font-size:60px;
+    margin-bottom:25px;
+}
+
+.about-text{
+    color:#aaa;
+    line-height:1.8;
+    font-size:18px;
+    margin-bottom:50px;
+}
+
+.social-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.social-card{
+    background:#181818;
+    border:1px solid #222;
+    border-radius:25px;
+    padding:30px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social-card:hover{
+    transform:translateY(-8px);
+    border-color:orange;
+}
+
+.social-card h3{
+    color:white;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.social-card p{
+    color:#999;
+    line-height:1.6;
+}

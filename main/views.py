@@ -35,3 +35,7 @@ def category_recipes(request,id):
     recipes = Recipe.objects.filter(category=category)
     context = {'recipes':recipes,'category':category}
     return render(request,'category_recipes.html',context)
+
+
+def About(request):
+    return render(request,'About.html')

@@ -17,13 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.urls import path
-from main.views import index, Recipes,category_recipes
+from main.views import index, Recipes,category_recipes,About
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls,name='admin'),
     path('',index,name='index'),
     path('recipes/',Recipes,name='Recipes'),
     path('categories/<int:id>/',category_recipes,name='category_recipes'),
+    path('about/',About,name='about'),
 ]
 
 
